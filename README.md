@@ -57,55 +57,6 @@
 
 ---
 
-## 🏗️ System Architecture & Data Flow
-
-```mermaid
-flowchart TD
-    subgraph PowerSystem["⚡ Sustainable Power System"]
-        SP[50W Solar Panel] --> MPPT[MPPT Charge Controller]
-        MPPT --> BATT[12-Cell 18650 Li-ion Pack + BMS]
-        BATT --> INA[INA219 Power Monitor]
-        INA --> PWR_DIST[12V / 5V DC Rails]
-    end
-
-    subgraph EmbeddedCore["🧠 Embedded Controller Subsystem"]
-        PICO[Raspberry Pi Pico WH]
-        L298N[Dual L298N Motor Drivers]
-        MOTORS[4WD High-Torque DC Motors]
-        RELAY[2-Channel Relay Module]
-        PUMP[12V High-Pressure Spray Pump]
-        US[HC-SR04 Ultrasonic Sensors]
-        
-        PICO --> L298N --> MOTORS
-        PICO --> RELAY --> PUMP
-        US -->|Obstacle Echo| PICO
-        INA -->|Voltage / Current I2C| PICO
-    end
-
-    subgraph VisionAI["👁️ AI Vision Subsystem"]
-        CAM[1080p High-Resolution IP Camera]
-        ML[YOLOv8 / CNN Disease Classification Model]
-        CAM -->|RTSP / HTTP Stream| ML
-        ML -->|Inference Result: Disease Detected| PICO
-    end
-
-    subgraph CloudAndUI["🌐 Telemetry & Control Platform"]
-        FB[(Firebase Realtime Database)]
-        DASH[ReactJS Web Dashboard]
-        
-        PICO <-->|Telemetry & State Sync (Wi-Fi)| FB
-        ML -->|Infection Event Logs| FB
-        FB <-->|WebSockets / Realtime Sync| DASH
-        CAM -.->|Live Video Feed| DASH
-    end
-
-    style PowerSystem fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
-    style EmbeddedCore fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
-    style VisionAI fill:#fff3e0,stroke:#e65100,stroke-width:2px
-    style CloudAndUI fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
-```
-
----
 
 ## ⚙️ Hardware Bill of Materials (BOM)
 
