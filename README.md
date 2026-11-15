@@ -1,5 +1,6 @@
 # AI-Powered Advanced Pesticide Spraying Robot with Disease Detection and Web Dashboard (AGRO VISION)
 
+[![Agro Vision CI](https://github.com/vachan18/AI-POWERED-PESTICIDE-SPRAYING-ROBOT-WITH-DISEASE-DETECTION/actions/workflows/ci.yml/badge.svg)](https://github.com/vachan18/AI-POWERED-PESTICIDE-SPRAYING-ROBOT-WITH-DISEASE-DETECTION/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Machine Learning](https://img.shields.io/badge/AI%2FML-YOLOv8%20%7C%20CNN-FF6F00?logo=pytorch&logoColor=white)](https://ultralytics.com/)
 [![Embedded](https://img.shields.io/badge/Microcontroller-Raspberry%20Pi%20Pico%20WH-C51A4A?logo=raspberrypi&logoColor=white)](https://www.raspberrypi.com/)
