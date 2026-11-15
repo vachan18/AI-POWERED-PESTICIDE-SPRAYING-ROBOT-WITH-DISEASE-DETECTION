@@ -15,3 +15,9 @@ scratch/
 # Office Temporary Files
 ~$*
 .~lock.*
+
+# Python Bytecode and Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
